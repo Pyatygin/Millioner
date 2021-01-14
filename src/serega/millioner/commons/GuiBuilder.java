@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+// TODO: лишний вывод, newimg - не правильный формат названия переменной
 public class GuiBuilder {
 
     public static void setComponentSize(JComponent component, Dimension dimension){

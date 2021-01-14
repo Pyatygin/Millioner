@@ -4,6 +4,7 @@ import serega.millioner.entity.Question;
 
 import java.util.ArrayList;
 
+// TODO: списки должны быть не изменяемыми
 public class QuestionLoader {
 
     private ArrayList<Question> questionArray = new ArrayList();

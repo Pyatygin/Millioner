@@ -5,6 +5,7 @@ import serega.millioner.entity.Question;
 import javax.swing.*;
 import java.util.ArrayList;
 
+// TODO: лишний вывод в консоль
 public class GenerationRandomNumber {
 
     public GenerationRandomNumber() {

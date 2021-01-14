@@ -5,12 +5,7 @@ import serega.millioner.entity.Question;
 import javax.swing.*;
 import java.util.ArrayList;
 
-// TODO: лишний вывод в консоль
 public class GenerationRandomNumber {
-
-    public GenerationRandomNumber() {
-        System.out.println("Создан новый объект");
-    }
 
     public ArrayList<Integer> generateNumberHalf(){
         ArrayList<Integer> randomNumbersAnswer = new ArrayList<Integer>();

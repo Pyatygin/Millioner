@@ -13,7 +13,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-// TODO: итератор не должен меняться во время игры.
 public class MillionerFrame extends JFrame {
 
     public static final Dimension FRAME_SIZE = new Dimension(671, 610);
@@ -24,10 +23,10 @@ public class MillionerFrame extends JFrame {
     public QuestionProgressPanel panelQuestionProgress;
     public AnswerAreaPanel panelAnswerArea;
 
-    private Iterator<Question> iterator;
+    private final Iterator<Question> iterator;
 
-    // TODO: для чего?
-    public static long winningMoney=0;
+    // TODO: Сделать деньги!
+    public static long winningMoney = 0;
 
     private Question currentQuestion;
 
@@ -137,10 +136,7 @@ public class MillionerFrame extends JFrame {
 
                     for (int i = 0; i < currentQuestion.getMasAnswer().length; i++) {
                         if (count < 2) {
-                            // TODO: if-else можно переделть в if
-                            if (currentQuestion.getMasAnswer()[i].equals(currentQuestion.getTrueAnswer())) {
-                                continue;
-                            } else {
+                            if (!currentQuestion.getMasAnswer()[i].equals(currentQuestion.getTrueAnswer())) {
                                 currentQuestion.getMasAnswer()[i] = "";
                                 count++;
                             }
@@ -259,14 +255,17 @@ public class MillionerFrame extends JFrame {
             ArrayList<Long> progressGetData = GuiBuilder.progressSimvols();
             ArrayList<JLabel> progressImage = new ArrayList<>();
 
-            // TODO: не правильное форматирование
+
             for (int i = progressGetData.size()-1; i >= 0; i--) {
+
                 JLabel label = new JLabel(i + 1 + ")               " + progressGetData.get(i));
                 GuiBuilder.setComponentSize(label,JLABLE_PROGRESS_SIZE);
                 label.setOpaque(true);
+
                 progressImage.add(label);
                 add(label);
             }
+
             for (int i = progressImage.size()-1; i >=0 ; i--) {
                 winProgress.add(progressImage.get(i));
             }
@@ -303,14 +302,10 @@ public class MillionerFrame extends JFrame {
 
         public final Dimension PANEL_ANSWER_SIZE = new Dimension(630, 200);
 
-        // TODO: все кнопки не должны меняться во время выполнения программы
-        private JButton buttonVariantA;
-        private JButton buttonVariantB;
-        private JButton buttonVariantC;
-        private JButton buttonVariantD;
-
-         // TODO: зачем?
-        int count = 0;
+        private final JButton buttonVariantA;
+        private final JButton buttonVariantB;
+        private final JButton buttonVariantC;
+        private final JButton buttonVariantD;
 
         public AnswerAreaPanel() {
 

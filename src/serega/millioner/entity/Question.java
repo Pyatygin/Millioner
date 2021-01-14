@@ -1,12 +1,11 @@
 package serega.millioner.entity;
 import java.util.Arrays;
 
-// TODO: нужно запретить возможность редактирования глобальных переменных этого класса
 public class Question {
 
-    private String textQuestion;
-    private String trueAnswer;
-    private String[] masAnswer;
+    private final String textQuestion;
+    private final String trueAnswer;
+    private final String[] masAnswer;
 
     public Question(String textQuestion, String trueAnswer, String[] masAnswer) {
         this.textQuestion = textQuestion;

@@ -277,6 +277,8 @@ public class MillionerFrame extends JFrame {
         public void progressUp(){
 
             JLabel label = progressIterator.next();
+//            int a = Integer.parseInt(label.getText());
+//            System.out.println(a);
             label.setBackground(new Color(68, 156, 40));
             label.revalidate();
             label.repaint();

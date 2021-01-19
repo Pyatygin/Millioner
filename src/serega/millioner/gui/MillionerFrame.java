@@ -184,11 +184,12 @@ public class MillionerFrame extends JFrame {
 
                     FriendType friendType = FriendType.getRandomFriend();
 
-                    if(friendType.getTrueAnswerForFriend()){
-                        dialog.add(new JLabel( friendType.getTextPerson() + currentQuestion.getTrueAnswer()));
-                    }else {
-                        dialog.add(new JLabel(friendType.getTextPerson() + currentQuestion.wrongAnswer()));
-                    }
+                    dialog.add(
+                            new JLabel(
+                                    friendType.getTextPerson() +
+                                            (friendType.getTrueAnswerForFriend() ? currentQuestion.getTrueAnswer() : currentQuestion.wrongAnswer())
+                            )
+                    );
 
                     dialog.setSize(500,100);
                     dialog.setVisible(true);
